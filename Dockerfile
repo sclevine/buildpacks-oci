@@ -83,5 +83,17 @@ ENV \
   INSTANCE_INDEX=0 \
   PORT=8080 \
   TMPDIR=/home/vcap/tmp
+  
+ENV VCAP_APPLICATION '{ \
+    "limits": {"fds": 16384, "mem": 512, "disk": 1024}, \
+    "application_name": "local", "name": "local", "space_name": "local-space", \
+    "application_uris": ["localhost"], "uris": ["localhost"], \
+    "application_id": "01d31c12-d066-495e-aca2-8d3403165360", \
+    "application_version": "2b860df9-a0a1-474c-b02f-5985f53ea0bb", \
+    "version": "2b860df9-a0a1-474c-b02f-5985f53ea0bb", \
+    "space_id": "18300c1c-1aa4-4ae7-81e6-ae59c6cdbaf1", \
+    "instance_id": "999db41a-508b-46eb-74d8-6f9c06c006da", \
+    "host": "0.0.0.0", "instance_index": 0, "port": 8080 \
+  }'
 
 CMD cd /home/vcap/app && /tmp/lifecycle/launcher /home/vcap/app "$(jq -r .start_command /home/vcap/staging_info.yml)" ''
