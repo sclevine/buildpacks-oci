@@ -1,4 +1,6 @@
-# CF Local
+# CF Local - Dockerfile POC
+
+DEPRECATED: Check out [CF Local](https://github.com/sclevine/cflocal).
 
 Put this Dockerfile in any app directory and run `docker build -t myapp .` to build a Docker image of that app.
 
