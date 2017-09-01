@@ -1,15 +1,17 @@
-# CF Local - Dockerfile POC
+# Buildpacks for OCI - Proof of Concept
 
-DEPRECATED: Check out [CF Local](https://github.com/sclevine/cflocal).
+## Instructions
+1. Start any Dockerfile with:
+```
+FROM sclevine/buildpacks
+```
 
-Put this Dockerfile in any app directory and run `docker build -t myapp .` to build a Docker image of that app.
+2. Put the Dockerfile in a CF app directory.
 
-Run the app using: `docker run -it --rm -p 8080:8080 myapp`
+3. Build the Docker image: `docker build -t myapp .`
 
-Features:
-  - Builds against the latest cflinuxfs2
-  - Always uses the latest stable version of the default system buildpacks
+4. Run the app: `docker run -it --rm -p 8080:8080 myapp`
 
 Limitations:
-  - Java JAR or WAR files must be unzipped and treated as the app directory
-  - An application's manifest.yml will not be respected
+  - Java JAR or WAR files must be unzipped
+  - No support for manifest.yml files
