@@ -33,6 +33,7 @@ ENV \
   CF_STACK=cflinuxfs2 \
   HOME=/home/vcap \
   PATH=/usr/local/bin:/usr/bin:/bin \
+  LANG=en_US.UTF-8 \
   MEMORY_LIMIT=1024m \
   VCAP_SERVICES={}
 
